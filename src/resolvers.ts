@@ -1,5 +1,5 @@
 import { paginateResults } from './utils';
-import { IResolvers } from 'apollo-server';
+import { IResolvers } from 'apollo-server-express';
 
 const resolvers: IResolvers = {
   Query: {
