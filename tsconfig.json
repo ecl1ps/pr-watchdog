@@ -5,8 +5,8 @@
         "target": "es6",
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "dist",
-        "baseUrl": ".",
+        "outDir": "./dist",
+        "rootDir": "./src",
         "skipLibCheck": true,
         /*"paths": {
             "*": [
@@ -16,6 +16,6 @@
         }*/
     },
     "include": [
-        "src/**/*"
+        "./src/**/*"
     ]
 }
