@@ -1,5 +1,5 @@
-import { paginateResults } from './utils';
-import { IResolvers } from 'apollo-server-express';
+import { paginateResults } from "./utils";
+import { IResolvers } from "apollo-server-express";
 
 const resolvers: IResolvers = {
   Query: {
@@ -41,7 +41,7 @@ const resolvers: IResolvers = {
         success: results && results.length === launchIds.length,
         message:
           results.length === launchIds.length
-            ? 'trips booked successfully'
+            ? "trips booked successfully"
             : `the following launches couldn't be booked: ${launchIds.filter(
                 id => !results.includes(id),
               )}`,
@@ -54,19 +54,19 @@ const resolvers: IResolvers = {
       if (!result)
         return {
           success: false,
-          message: 'failed to cancel trip',
+          message: "failed to cancel trip",
         };
 
       const launch = await dataSources.launchAPI.getLaunchById({ launchId });
       return {
         success: true,
-        message: 'trip cancelled',
+        message: "trip cancelled",
         launches: [launch],
       };
     },
     login: async (_, { email }, { dataSources }) => {
       const user = await dataSources.userAPI.findOrCreateUser({ email });
-      if (user) return new Buffer(email).toString('base64');
+      if (user) return new Buffer(email).toString("base64");
     },
   },
   Launch: {
@@ -75,8 +75,8 @@ const resolvers: IResolvers = {
   },
   Mission: {
     // make sure the default size is 'large' in case user doesn't specify
-    missionPatch: (mission, { size } = { size: 'LARGE' }) => {
-      return size === 'SMALL'
+    missionPatch: (mission, { size } = { size: "LARGE" }) => {
+      return size === "SMALL"
         ? mission.missionPatchSmall
         : mission.missionPatchLarge;
     },

@@ -1,6 +1,6 @@
-const { HttpLink } = require('apollo-link-http');
-const fetch = require('node-fetch');
-const { execute, toPromise } = require('apollo-link');
+const { HttpLink } = require("apollo-link-http");
+const fetch = require("node-fetch");
+const { execute, toPromise } = require("apollo-link");
 
 module.exports.toPromise = toPromise;
 
@@ -13,7 +13,7 @@ const {
   LaunchAPI,
   UserAPI,
   store,
-} = require('../');
+} = require("../");
 
 /**
  * Integration testing utils

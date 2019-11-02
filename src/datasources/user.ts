@@ -1,5 +1,5 @@
-import { DataSource } from 'apollo-datasource';
-import isEmail from 'isemail';
+import { DataSource } from "apollo-datasource";
+import isEmail from "isemail";
 
 export class UserAPI extends DataSource {
   private context!: any;
@@ -38,7 +38,7 @@ export class UserAPI extends DataSource {
     const userId = this.context.user.id;
     if (!userId) return;
 
-    let results = [];
+    const results = [];
 
     // for each launch id, try to book the trip and add it to the results array
     // if successful
